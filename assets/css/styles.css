@@ -54,7 +54,7 @@ body {
 /* ====== WELCOME SECTION ====== */
 
 #welcome {
-    height: 100vh;
+    height: 70vh;
 }
 
 #welcome .container {
@@ -63,11 +63,18 @@ body {
     place-content: center;
 }
 
-.welcome-title, .welcome-subtitle {
-    font-size: 6.4rem;
-    font-weight: 800;
+.welcome-title {
+    font-size: 2.5rem;
+    font-weight: 600;
     color: var(--text--primary-color);
-    line-height: 1;
+    line-height: 0.7;
+}
+
+.welcome-subtitle {
+    font-size: 7.7rem;
+    color: var(--text--primary-color);
+    line-height: 0.7;
+    font-weight: 800;
 }
 
 /* ====== ENVOLVE O TITULO E OS ICONS ====== */
@@ -75,7 +82,11 @@ body {
 .welcome-subtitle-wrapper {
     display: flex;
     align-items: center;
-    gap: 1.6rem;
+    line-height: 0.7;
+    font-size: 5rem;
+    color: var(--text--primary-color);
+    line-height: 1;
+    font-weight: 800;
 }
 
 .welcome-social-list {
@@ -89,6 +100,8 @@ body {
 .welcome-social-link {
     color: var(--text-secundary-color);
 }
+
+
 
 /* ===== ABOUT SECTION ====== */
 
@@ -166,6 +179,11 @@ body {
 
 .projects-item.projects-item--right {
     align-self: flex-end;
+    flex-direction: row-reverse;
+}
+
+.projects-item.projects-item--right .projects-link {
+    transform: matrix(-1, 0, 0, 1, 0, 0);
 }
 
 .projects-link {
@@ -183,9 +201,17 @@ body {
     align-items: flex-start;
 }
 
-.projects-text-wrapper.projects-text-wrapper--right, .projects-links-list.projects-links-list--right {
+.projects-links-list.projects-links-list--right {
     order: -1;
-    margin-right: 1.6rem;
+
+}
+
+.projects-text-wrapper.projects-text-wrapper--right{
+    text-align: end;
+}
+
+.projects-text {
+    align-items: end;
 }
 
 .projects-title {
@@ -211,6 +237,84 @@ body {
     font-size: 4.8rem;
 }
 
+/* === FORM SECTION === */
+
+.search-bar{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    color: var(--text--primary-color);
+}
+
+::placeholder{
+    color: var(--text--primary-color);
+}
+
+.name {
+    width: 60%;
+    text-align: center;
+    padding: 0.8rem;
+    background-color: transparent;
+    border: 2px solid var(--text--primary-color);
+    border-radius: 2rem;
+    outline: none;
+    font-weight: 700;
+    color: var(--text--primary-color);
+
+}
+.email {
+    width: 60%;
+    text-align: center;
+    padding: 0.8rem;
+    background-color: transparent;
+    border: 2px solid var(--text--primary-color);
+    border-radius: 2rem;
+    outline: none;
+    font-weight: 700;
+    color: var(--text--primary-color);
+}
+.text-box {
+    width: 60%;
+    height: 15rem;
+    text-align: center;
+    padding: 0.8rem;
+    background-color: transparent;
+    border: 2px solid var(--text--primary-color);
+    border-radius: 2rem;
+    outline: none;
+    font-weight: 700;
+    color: var(--text--primary-color);
+}
+
+.send {
+    padding: 0.8rem;
+    width: 15rem;
+    background-color: var(--text--primary-color);
+    border: 2px solid var(--text--primary-color);
+    border-radius: 2rem;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.send:hover {
+    background-color: transparent;
+    border: 2px solid var(--text--primary-color);
+    border-radius: 2rem;
+    color: var(--text--primary-color);
+}
+
+/* FOOTER */
+footer div p {
+    display: flex;
+    justify-content: center;
+    color: var(--text--primary-color);
+    padding: 1rem;
+    margin-top: 5rem;
+    font-size: 1.5rem;
+}
+
 /* RESPONSIVE MOBILE */
 
 @media screen and (max-width: 850px) {
@@ -218,9 +322,13 @@ body {
         justify-content: center;
     }
 
-    .welcome-title, .welcome-subtitle {
-        font-size: 4.8rem;
+    .welcome-title{
+        font-size: 2.5rem;
     }
+
+    .welcome-subtitle {
+        font-size: 7.4rem;
+    } 
 
     .projects-list {
         align-items: center;
@@ -234,11 +342,14 @@ body {
 
     .projects-item.projects-item--right {
         align-self: initial;
+        flex-direction: column;
+        text-align: start;
     }
 
     .projects-text-wrapper.projects-text-wrapper--right, .projects-links-list.projects-links-list--right {
         order: initial;
         margin-right: initial;
+        text-align: start;
     }
 }
 
@@ -251,8 +362,16 @@ body {
         height: fit-content;
     }
 
-    .welcome-title, .welcome-subtitle {
-        font-size: 3.6rem;
+    .welcome-title{
+        font-size: 2rem;
+    }
+
+    .welcome-subtitle {
+        font-size: 6.1rem;
+    }
+
+    .welcome-subtitle-wrapper {
+        font-size: 4rem;
     }
 
     .about-photo {
@@ -268,6 +387,8 @@ body {
         width: 30rem;
     }
 
+
+
     .projects-title {
         font-size: 3.6rem;
     }
@@ -282,8 +403,17 @@ body {
         gap: 1.6rem;
     }
 
-    .welcome-title, .welcome-subtitle {
-        font-size: 2.8rem;
+    .welcome-title {
+        font-size: 1.5rem;
+    }
+
+    .welcome-subtitle{
+        font-size: 4.7rem;
+    }
+
+    .welcome-subtitle-wrapper {
+        font-size: 3rem;
+        line-height: 3.5rem;
     }
 
     .about-photo {
@@ -308,5 +438,8 @@ body {
         flex-direction: column;
         align-items: center;
         gap: 1.6rem;
+    }
+    .projects-text-right{
+        text-align: center;
     }
 }
